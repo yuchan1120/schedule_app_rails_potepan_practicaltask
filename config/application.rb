@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module FirstApp
+module TaskApp2
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
@@ -18,5 +18,10 @@ module FirstApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_controller.permit_all_parameters = true
+    # タイムゾーンを日本時間に設定
+    config.time_zone = 'Asia/Tokyo'
+    
+    config.i18n.default_locale = :ja
   end
 end
