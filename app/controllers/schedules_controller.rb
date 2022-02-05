@@ -3,6 +3,7 @@ class SchedulesController < ApplicationController
 
   def index
     @schedules = Schedule.all
+    render :layout => 'top'
   end
 
   def new

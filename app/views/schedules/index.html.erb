@@ -1,6 +1,3 @@
-<header>
-  <h1>Ruby on Rails スケジュール管理アプリ</h1>
-</header>
 <div class="main_container">
   <h2>スケジュール一覧</h2>
   <% if flash[:notice_success] %>
@@ -63,9 +60,4 @@
           <%= link_to"スケジュール新規登録",:new_schedule %>
         </p>
 </div>
-<footer>
-  <h1>現在の日時 :
-    <%= l Date.today %> 　スケジュール合計 :
-      <%= Schedule.count %>
-  </h1>
-</footer>
+

@@ -17,7 +17,8 @@
     <%= yield %>
     <footer>
     <h1>現在の日時 :
-    <%= l Date.today %>
+    <%= l Date.today %>　スケジュール合計 :
+    <%= Schedule.count %>
   </h1>
 </footer>
   </body>
