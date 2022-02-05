@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Schedule_app</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
+<head>
+  <title>Schedule_app</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
   <header>
-  <h1>Ruby on Rails スケジュール管理アプリ</h1>
-</header>
-    <%= yield %>
+    <h1>Ruby on Rails スケジュール管理アプリ</h1>
+  </header>
+  <%= yield %>
     <footer>
-    <h1>現在の日時 :
-    <%= l Date.today %>
-  </h1>
-</footer>
-  </body>
+      <h1>現在の日時 :
+        <%= l Date.today %>
+      </h1>
+    </footer>
+</body>
 </html>
