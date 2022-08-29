@@ -1,0 +1,63 @@
+<div class="main_container">
+  <h2>スケジュール一覧</h2>
+  <% if flash[:notice_success] %>
+    <p class="alert alert__success">
+      <%= flash[:notice_success] %>
+    </p>
+    <% elsif flash[:notice_delete] %>
+      <p class="alert alert__delete">
+        <%= flash[:notice_delete] %>
+      </p>
+      <% end %>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>タイトル</th>
+              <th>開始日</th>
+              <th>終了日</th>
+              <th>終日</th>
+              <th>スケジュール更新日時</th>
+              <th>確認</th>
+              <th>編集</th>
+              <th>削除</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @schedules.each do |schedule| %>
+              <tr>
+                <td>
+                  <%= schedule.id %>
+                </td>
+                <td>
+                  <%= schedule.title %>
+                </td>
+                <td>
+                  <%= l schedule.start_date %>
+                </td>
+                <td>
+                  <%= l schedule.end_date %>
+                </td>
+                <td>
+                  <%= schedule.all_day ? '◯' : '' %>
+                </td>
+                <td>
+                  <%= l schedule.updated_at, format: :long %>
+                </td>
+                <td>
+                  <%= link_to "確認", schedule %>
+                </td>
+                <td>
+                  <%= link_to "編集", [:edit, schedule] %>
+                </td>
+                <td>
+                  <%= link_to "削除", schedule, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <p>
+          <%= link_to"スケジュール新規登録",:new_schedule %>
+        </p>
+</div>
+
